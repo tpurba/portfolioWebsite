@@ -2,6 +2,9 @@
 
 import { useState } from "react"
 import "./App.css"
+import pantryAI from "./assets/pantryAI.jpg"
+import orc from "./assets/orc.jpg"
+import tradeOff from "./assets/tradeoff_logo.webp"
 
 function App() {
   const [activeProject, setActiveProject] = useState(0)
@@ -12,7 +15,9 @@ function App() {
       title: "Intermountain Health Clinic Library Web App",
       subtitle: "Front End Developer",
       location: "Intermountain Health Clinic, Provo, UT",
-      period: "2023 - 2024",
+      livePage:"https://bibliotrace.com/login",
+      video:"https://www.youtube.com/embed/5qw0Yw-X_9A",
+      period: "January 2025 - April 2025",
       overview:
         "This project modernized an outdated Microsoft Access-based library system into a mobile-friendly web application designed for young cancer patients. The new system enhances accessibility with simplified navigation and larger text, allowing patients to use their own mobile devices. Additionally, the project upgraded the database and automated key processes—such as check-in/out, auditing, and data migration—reducing technical overhead for elderly volunteer administrators and improving the overall patient library experience.",
       features: [
@@ -23,40 +28,114 @@ function App() {
         "Admin management simplified for voluenteers to manage the library's book collection",
         "Developed a search bar that returns relevant results even when users enter misspelled words or incorrect terms.",
       ],
-      techStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker"],
+      techStack: ["React", "Java Script", "Typescript", "Tailwind CSS", "MySQL", "AWS", "Docker"],
       impact: [
         { value: "40%", label: "Faster Search" },
         { value: "70%", label: "Automated Library Process" },
         { value: "3rd", label: "Place in Capstone Competition" },
       ],
+      futurePlans: "The project has been passed on to the healthcare professionals and a Computer Science Professor, who will continue to maintain and enhance the app. Future plans include adding more features based on user feedback, such as personalized reading recommendations and integration with other healthcare resources.",
+      reflections:"This project represents the summary of my college experience as I was able to show the qualities and talents I have nurtured throughout my time at BYU. I am excited to announce that this project placed 3rd place in the capstone judging competition at BYU.",
       color: "from-purple-500 to-pink-500",
     },
     {
       id: 1,
-      title: "VAST Storage Analysis Tool",
-      subtitle: "Supercomputer Web Developer",
-      period: "January 2024 - Current",
+      title: "Office of Research and Computing Web Platform",
+      subtitle: "Full Stack Web Developer",
+      period: "January 2024 - April 2025",
       location: "Office of Research and Computing, Provo, UT",
+      livePage:"https://rc.byu.edu/",
+      image: orc,
       overview:
-        "Developed a comprehensive web platform for the university's supercomputer infrastructure, serving 6,000+ users with live storage data management, user authentication, and administrative tools.",
+        "Managed and developed new features for the Office of Research and Computing's web platform, which provides a supercomputer infrastructure to BYU researchers. This project involved migrating data services from Java to VAST, implementing secure user authentication, and developing a dynamic protected data form with a personalized training system. The platform serves over 6,000 users, enhancing their ability to manage storage and access computing resources efficiently.",
       features: [
         "VAST API providing live storage data to 6,000+ users through web interface",
-        "Migrated data service from Java to VAST for improved user storage management",
         "Custom autofill algorithm improving username search speed by 50%",
         "Secure user authentication with NIST-compliant password management",
         "One-time password reset links for 200+ users",
-        "Grant tracking algorithm to demonstrate service value to professors",
-        "Dynamic protected data form with personalized training system",
-        "User coordinator page debugging and upgrades",
+        "Grant tracking algorithm to demonstrate service value to 60+ professors",
+        "Dynamic protected data form with personalized training system to 250+ users",
       ],
-      techStack: ["JavaScript", "Java", "VAST", "Node.js", "Database Systems", "Authentication APIs"],
+      techStack: ["JavaScript", "VAST", "MySQL", "Ajax", "PHP", "HTML", "CSS"],
       impact: [
         { value: "6,000+", label: "Active Users" },
         { value: "50%", label: "Search Speed Improvement" },
         { value: "200+", label: "Secure User Accounts" },
       ],
+      reflections: "This experience has helped me improve as a full stack developer. I was also able to learn to lead a team of 4 developers to finish many features to the point where there were no more tickets to work on. In additions I have grown in being able to read other peoples code and able to gain a deeper understanding in debugging front end.",
       color: "from-blue-500 to-cyan-500",
     },
+     {
+      id: 2,
+      title: "Pantry AI Web App",
+      subtitle: "Front End Developer",
+      location: "Utah State University, Logan, UT",
+      livePage:"https://github.com/harrydcole2/usu-hackathon-project?tab=readme-ov-file",
+      image: pantryAI,
+      period: "Feburary 2025",
+      overview:
+        "This is a project that I worked on during a hackathon at Utah State University. The goal was to create a web app that helps users manage their pantry inventory and suggests recipes based on available ingredients. The app uses AI to analyze the user's pantry items and provide personalized recipe recommendations, making meal planning easier and reducing food waste.",
+      features: [
+        "Web app that helps users manage their pantry inventory",
+        "AI-powered recipe suggestions based on available ingredients",
+        "User-friendly interface for easy navigation and management of pantry items",
+        "Real-time updates on pantry inventory and recipe suggestions",
+      ],
+      techStack: ["React", "TypeScript", "MySQL", "Docker"],
+      
+      futurePlans: "This project is still in its early stages, and I plan to keep it as a proof of concept in hopes that it can be paired with the walmart app to help users manage their pantry inventory and suggest recipes based on available ingredients. I am also looking to add more features such as a shopping list and meal planning.",
+      reflections:"This project was a very fun project that a I set up with a group of 3 other friends. We had a hour planning session, no coding, before going into the USU 24 hour Hackathon. All in all we were able to develop a working product that we were proud of and had a lot of fun trying out new languages and tech stacks as well as be able to show what we could do as a team.",
+      color: "from-green-500 to-teal-500",
+    },
+    {
+      id: 3,
+      title: "Bop it Smart Watch App",
+      subtitle: "Tinkering with ESP32 Smart Watch Head",
+      video:"https://www.youtube.com/embed/hD45-yQ770c",
+      livePage:"https://github.com/tpurba/bopit-ESP32",
+      period: "Janurary 2025 - April 2025",
+      overview:
+        "This is a project that I worked on as a hobby project. The goal was to create a smart watch app that allows users to play the classic game Bop it. The app uses the ESP32 microcontroller to connect to a smart watch and provides a fun and interactive way to play the game on the go.",
+      features: [
+        "Simple and fun game that can be played on a smart watch",
+        "Takes in user input from the watch to control the game",
+        "Very simple and easy to use interface",
+      ],
+      techStack: ["Arduino", "C++"],
+      impact: [
+        { value: "50+", label: "Users enjoyed the game" },
+        { value: "124", label: "High score" },
+        { value: "7+", label: "Can play the game" },
+      ],
+      futurePlans: "This is a project that I plan to keep as a hobby project. I am looking to add more features such as a leaderboard and multiplayer support. I am also looking to improve the user interface and make it more user-friendly.",
+      reflections:"This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
+      color: "from-green-500 to-teal-500",
+    },
+    {
+      id: 4,
+      title: "Trade Off the Game",
+      subtitle: "Game Developer",
+      video:"https://www.youtube.com/embed/1nLaHx9NoSI",
+      livePage:"https://github.com/Swimnato/BYUGameJamSpring2025",
+      period: "March 2025 - April 2025",
+      overview:
+        "This is a 3 week game jam Project that I worked on with a group of 7 people. 3 of us were developers creating a 3d top down metrovania game with a slight twist where you have to give up your keybindings/ conrtols to gain other abilities.",
+      features: [
+        "Simple and fun game that can be played on a smart watch",
+        "Takes in user input from the watch to control the game",
+        "Very simple and easy to use interface",
+      ],
+      techStack: ["Unreal Engine 5", "C#"],
+      impact: [
+        { value: "20+", label: "Users enjoyed the game" },
+        { value: "5+", label: "Levels" },
+        { value: "7+", label: "Can play the game" },
+      ],
+      reflections:"This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
+      color: "from-green-500 to-teal-500",
+    },
+
+
   ]
 
   const currentProject = projects[activeProject]
@@ -146,6 +225,14 @@ function App() {
                 <p className="text-xl text-gray-600">{currentProject.subtitle}</p>
                 <p className="text-gray-500">{currentProject.period}</p>
                 {currentProject.location && <p className="text-gray-500">{currentProject.location}</p>}
+                <a 
+                  href={currentProject.livePage} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-500 underline"
+                >
+                  {"Live Page"}
+                </a>
               </div>
             </header>
 
@@ -154,8 +241,23 @@ function App() {
               <section>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Project Overview</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">{currentProject.overview}</p>
-
-                {activeProject === 0 && (
+                {currentProject.video && (
+                  <div className="aspect-video">
+                    <iframe
+                      src={currentProject.video}
+                      title="YouTube video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full rounded-lg shadow-lg"
+                    ></iframe>
+                  </div>
+                )}
+                {currentProject.image &&(
+                  <img src={currentProject.image} alt="Description of image" className="w-full h-auto" />
+                )}
+                
+                      {/* good Idea below with the circle boxes but not good in that it re iterates the idea that would be put in key features */}
+                {/* {activeProject === 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
                       <h4 className="font-semibold text-gray-900 mb-2">Mobile Friendly Web app</h4>
@@ -172,7 +274,7 @@ function App() {
                       </p>
                     </div>
                   </div>
-                )}
+                )} */}
               </section>
 
               <section>
@@ -201,17 +303,21 @@ function App() {
               </section>
 
               <section>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Project Impact</h3>
-                <div className={`bg-gradient-to-r ${currentProject.color} p-8 rounded-2xl text-white`}>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    {currentProject.impact.map((stat, index) => (
-                      <div key={index}>
-                        <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                        <div className="text-white/80">{stat.label}</div>
+                {currentProject.impact && (
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">Project Impact</h3>
+                    <div className={`bg-gradient-to-r ${currentProject.color} p-8 rounded-2xl text-white`}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        {currentProject.impact.map((stat, index) => (
+                          <div key={index}>
+                            <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                            <div className="text-white/80">{stat.label}</div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
+                  </div>   
+                )}
               </section>
 
               {activeProject === 0 && (
@@ -280,10 +386,15 @@ function App() {
 
               <section className="pb-12">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  {activeProject === 0 ? "Project Recognition" : "Ongoing Development"}
+                  Post Project Reflections and Future Plans
                 </h3>
                 <div className="bg-gray-50 p-6 rounded-xl">
-                  {activeProject === 0 ? (
+                  <div className="space-y-4">
+                    <p className="text-gray-600">{currentProject.futurePlans}</p>
+                    <p className="text-gray-600 italic font-medium">{currentProject.reflections}</p>
+                  </div>
+                  
+                  {/* {activeProject === 0 ? (
                     <div className="space-y-4">
                       <p className="text-gray-600">
                         The project has been passed on to the healthcare professionals and a Computer Science Professor,
@@ -308,7 +419,7 @@ function App() {
                         <li>• Advanced analytics dashboard for system administrators</li>
                       </ul>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </section>
             </div>
