@@ -4,8 +4,8 @@ import { useState } from "react"
 import "./App.css"
 import pantryAI from "./assets/pantryAI.jpg"
 import orc from "./assets/orc.jpg"
-import tradeOff from "./assets/tradeoff_logo.webp"
-
+import codeReader from "./assets/CodeReaderTest.jpg"
+import familySearch from "./assets/familySearch.jpg"
 function App() {
   const [activeProject, setActiveProject] = useState(0)
 
@@ -131,7 +131,72 @@ function App() {
         { value: "5+", label: "Levels" },
         { value: "7+", label: "Can play the game" },
       ],
+      futurePlans: "This project is still in its early stages, I plan to work out some of the bugs I could not get to during the hackathon.",
       reflections:"This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
+      color: "from-green-500 to-teal-500",
+    },
+
+    {
+      id: 5,
+      title: "Project Code Reader Tester",
+      subtitle: "Web Developer",
+      image: codeReader,
+      livePage:"https://github.com/tpurba/CodeReaderTester",
+      period: " December 2024",
+      overview:
+        "This is a project that I worked on for my database class. The goal was to create a web app that allows users to test their code reading skills. The app uses a simple interface to display code snippets and provides feedback on the user's performance. The app is designed to help users improve their code reading skills and become more proficient in programming.",
+      features: [
+        "Simple UI that allows users to test their code reading skills",
+        "Provides feedback on the user's performance",
+        "Personlized feedback based on the user's performance",
+        "Leverages ChatGPT to provide personalized feedback",
+      ],
+      techStack: ["JavaScript ", "HTML", "Python", "CSS", "MongoDB", "ChatGPT", "JSON"],
+      futurePlans: "This project was a proof of concept that I worked on for my database class. I plan to keep it as a hobby project and add more languages for users to test thier reading skills in.",
+      reflections:"This project was a test to see how far I could take a simple idea and leverage ChatGPT. I learned a lot about how to use ChatGPT from double shot to zero shot and how to use it to provide personalized feedback.",
+      color: "from-green-500 to-teal-500",
+    },
+
+    {
+      id: 6,
+      title: "Tweeter Java based Android App",
+      subtitle: "Android App Developer",
+      video:"https://www.youtube.com/embed/aharuBnTSeE?si=mJuVUo_q2plx_kxX",
+      livePage:"https://github.com/tpurba/CS340-Tweeter-app",
+      period: "August 2023 - December 2023",
+      overview:
+        "This project was a semester long project that each student had to work on individually for CS340. The goal for this project was to teach good coding practices and software design by creating a tweeter app. This app is a MVC based Android app that supports all the basic features of a tweeter app such as posting, liking, and following users. The app is designed to be user-friendly and easy to navigate. The below video is a demo created by the TAs to show the apps features(Note: it is not my video nor exactly what my app looks like as I added a few more visuals but is very simlar).",
+      features: [
+        "Simple UI that allows users to post, like, and follow users",
+        "AWS S3 usage for profile photos, authentication token, sign out functionality, and password hashing.",
+        "Handles 10,000 posts and 10,000 follow requests with ease",
+        "Provides users with real-time updates for counts and posts.",
+      ],
+      techStack: ["Java ", "Android Studio", "AWS"],
+      reflections:"This project was a huge project that took everything for me to finish on time. I remeber working tirelessly till 2am many days in a row to figure out and finish the project. I rememeber thinking of asking for help or working together on this project to finish it but I wanted to prove to myself that I could do it on my own. It was a great chance for me to really push myself as a individual coded and gave me the confidence to be able to solve any problem on my own if needed and not rely on others.",
+      color: "from-green-500 to-teal-500",
+    },
+
+    {
+      id: 7,
+      title: "Family Ancestry Android App",
+      subtitle: "Android App Developer",
+      horzimage: familySearch,
+      livePage:"https://github.com/tpurba/CS240FamilyApp",
+      period: "August 2021 - December 2021",
+      overview:
+        "This project was a three quarter semester long project that each student had to work on individually for CS240. The goal for this project was to create a working android app that mimics the basic functionalities of a family search application. The features include adding/removing people to the family history, tracing the lineage on a map, and writing stories/information on the specific person.",
+      features: [
+        "Simple and interactive UI that allows users to add/remove people to the family history",
+        "Tracing the lineage on a map",
+        "Writing stories/information on the specific person",
+        "Allows users to search for people in the family history",
+        "Allows users to view the family history in a tree format",
+        "Settings that filter the family history by Father side, Mother side, Male Events, and Female Events",
+
+      ],
+      techStack: ["Java ", "Android Studio"],
+      reflections:"This project was a very difficult project that required a lot of help from TAs. But through the help I recieved and the work that I put in I was able to complete this project.",
       color: "from-green-500 to-teal-500",
     },
 
@@ -166,7 +231,7 @@ function App() {
       <div className="flex min-h-screen">
         {/* Left Panel - Fixed/Sticky */}
         <div className="lg:w-1/2 w-full lg:fixed lg:left-0 lg:top-0 lg:h-screen flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-8 lg:px-16 py-12 lg:py-0 relative z-10">
-          <div className="max-w-lg">
+          <div className="max-w-lg flex flex-col h-full overflow-hidden">
             <div className="mb-8">
               <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-white via-purple-200 to-purple-300 bg-clip-text text-transparent mb-6 leading-tight">
                 Takun Purba
@@ -188,11 +253,16 @@ function App() {
               <span className="px-4 py-2 bg-blue-500/20 text-blue-200 rounded-full text-sm border border-blue-400/30">
                 System Designer
               </span>
+              <span className="px-4 py-2 bg-cyan-500/20 text-cyan-200 rounded-full text-sm border border-blue-400/30">
+                Skills and Proficencies
+              </span>
+              <span className="px-4 py-2 bg-green-500/20 text-green-200 rounded-full text-sm border border-blue-400/30">
+                Contact Me
+              </span>
             </div>
-
             {/* Project Navigation */}
-            <div className="space-y-3 mb-8">
-              <p className="text-gray-400 text-sm uppercase tracking-wider">Featured Projects</p>
+            <p className="text-gray-400 text-sm uppercase tracking-wider">Featured Projects</p>
+            <div className="space-y-3 mb-8 overflow-y-auto pr-2" style={{ maxHeight: '30vh' }}>
               {projects.map((project, index) => (
                 <button
                   key={project.id}
@@ -254,6 +324,9 @@ function App() {
                 )}
                 {currentProject.image &&(
                   <img src={currentProject.image} alt="Description of image" className="w-full h-auto" />
+                )}
+                {currentProject.horzimage &&(
+                  <img src={currentProject.horzimage} alt="Description of image" className="h-auto" />
                 )}
                 
                       {/* good Idea below with the circle boxes but not good in that it re iterates the idea that would be put in key features */}
