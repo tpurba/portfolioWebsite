@@ -1,13 +1,14 @@
 "use client"
-
 import { useState } from "react"
 import "./App.css"
 import pantryAI from "./assets/pantryAI.jpg"
 import orc from "./assets/orc.jpg"
 import codeReader from "./assets/CodeReaderTest.jpg"
 import familySearch from "./assets/familySearch.jpg"
+import { ExternalLink, Github, Linkedin, ChevronLeft, ChevronRight } from "lucide-react"
 function App() {
   const [activeProject, setActiveProject] = useState(0)
+  const [currentView, setCurrentView] = useState<"projects" | "skills">("projects")
 
   const projects = [
     {
@@ -199,11 +200,41 @@ function App() {
       reflections:"This project was a very difficult project that required a lot of help from TAs. But through the help I recieved and the work that I put in I was able to complete this project.",
       color: "from-green-500 to-teal-500",
     },
-
-
   ]
 
+
+  const skills = {
+    "Programming Languages & IDEs": {
+      proficient: ["C++", "Python", "PHP", "C", "JavaScript", "HTML", "CSS"],
+      moderate: ["C#", "Java", "React"],
+      ides: ["PHPStorm", "Visual Studio", "Unity", "Android Studio", "Arduino", "Godot"],
+    },
+    Testing: {
+      areas: ["Unit testing", "Automation", "Mocking with Mockito"],
+    },
+    "Frameworks & Tools": {
+      items: ["React", "AWS", "MySQL"],
+    },
+    "Web Technologies": {
+      items: ["CSS/HTML", "WebSockets", "DOM Manipulation"],
+    },
+    "Database Management": {
+      relational: ["Oracle", "MySQL", "PostgreSQL", "SQLite"],
+      nosql: ["MongoDB", "Redis"],
+      bigData: ["Apache Spark"],
+      tools: ["MySQL Workbench", "Redis Insight"],
+    },
+  }
+
   const currentProject = projects[activeProject]
+
+  const nextProject = () => {
+    setActiveProject((prev) => (prev + 1) % projects.length)
+  }
+
+  const prevProject = () => {
+    setActiveProject((prev) => (prev - 1 + projects.length) % projects.length)
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -233,271 +264,474 @@ function App() {
         <div className="lg:w-1/2 w-full lg:fixed lg:left-0 lg:top-0 lg:h-screen flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-8 lg:px-16 py-12 lg:py-0 relative z-10">
           <div className="max-w-lg flex flex-col h-full overflow-hidden">
             <div className="mb-8">
-              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-white via-purple-200 to-purple-300 bg-clip-text text-transparent mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6=7xl xl:text-8xl font-bold bg-gradient-to-r from-white via-purple-200 to-purple-300 bg-clip-text text-transparent mb-6 leading-tight">
                 Takun Purba
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto lg:mx-0 mb-8"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto lg:mx-0 "></div>
             </div>
 
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8">
+            {/* <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8">
               My dream is to be able to create something amazing for the people who believe in me.
-            </p>
+            </p> */}
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
               <span className="px-4 py-2 bg-purple-500/20 text-purple-200 rounded-full text-sm border border-purple-400/30">
                 Fullstack Developer
               </span>
               <span className="px-4 py-2 bg-pink-500/20 text-pink-200 rounded-full text-sm border border-pink-400/30">
-                Web Developer
+                Software Engineer
               </span>
               <span className="px-4 py-2 bg-blue-500/20 text-blue-200 rounded-full text-sm border border-blue-400/30">
-                System Designer
-              </span>
-              <span className="px-4 py-2 bg-cyan-500/20 text-cyan-200 rounded-full text-sm border border-blue-400/30">
-                Skills and Proficencies
-              </span>
-              <span className="px-4 py-2 bg-green-500/20 text-green-200 rounded-full text-sm border border-blue-400/30">
-                Contact Me
+                Front End Developer
               </span>
             </div>
-            {/* Project Navigation */}
-            <p className="text-gray-400 text-sm uppercase tracking-wider">Featured Projects</p>
-            <div className="space-y-3 mb-8 overflow-y-auto pr-2" style={{ maxHeight: '30vh' }}>
-              {projects.map((project, index) => (
+
+            {/* Contact Links */}
+            <div className="mb-8">
+              <p className="text-slate-400 text-sm uppercase tracking-wider mb-4">Connect with me</p>
+              <div className="flex gap-4">
+                <a
+                  href="https://linkedin.com/in/takun-purba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-500/20 text-blue-200 rounded-lg text-sm border border-blue-400/30 backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-200 group"
+                >
+                  <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/tpurba/tpurba.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-500/20 text-slate-200 rounded-lg text-sm border border-slate-400/30 backdrop-blur-sm hover:bg-slate-500/30 transition-all duration-200 group"
+                >
+                  <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* View Toggle */}
+            <div className="mb-8">
+              <div className="flex gap-2 p-1 bg-slate-800/50 rounded-lg">
                 <button
-                  key={project.id}
-                  onClick={() => setActiveProject(index)}
-                  className={`block w-full text-left p-4 rounded-lg transition-all duration-300 ${
-                    activeProject === index
-                      ? "bg-white/10 border border-white/20 text-white"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                  onClick={() => setCurrentView("projects")}
+                  className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    currentView === "projects" ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"
                   }`}
                 >
-                  <div className="font-semibold text-sm">{project.title}</div>
-                  <div className="text-xs opacity-75">{project.period}</div>
+                  Projects
                 </button>
-              ))}
+                <button
+                  onClick={() => setCurrentView("skills")}
+                  className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    currentView === "skills" ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Skills
+                </button>
+              </div>
             </div>
+            
+            {/* Navigation Content */}
+            {currentView === "projects" ? (
+              <div>
+                <p className="text-slate-400 text-sm uppercase tracking-wider mb-4">Featured Projects</p>
+                <div className="space-y-2 max-h-80 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800">
+                  {projects.map((project, index) => (
+                    <button
+                      key={project.id}
+                      onClick={() => setActiveProject(index)}
+                      className={`block w-full text-left p-4 rounded-xl transition-all duration-300 group ${
+                        activeProject === index
+                          ? "bg-white/10 border border-white/20 text-white shadow-lg"
+                          : "text-slate-400 hover:text-white hover:bg-white/5 border border-transparent"
+                      }`}
+                    >
+                      <div className="font-semibold text-sm mb-1 group-hover:text-white transition-colors">
+                        {project.title}
+                      </div>
+                      <div className="text-xs opacity-75">{project.period}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div>
+                <p className="text-slate-400 text-sm uppercase tracking-wider mb-4">Technical Skills</p>
+                <div className="space-y-4 max-h-80 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800">
+                  {Object.entries(skills).map(([category, data]) => (
+                    <div key={category} className="p-4 bg-white/5 rounded-xl border border-white/10">
+                      <h4 className="font-semibold text-white text-sm mb-2">{category}</h4>
+                      <div className="space-y-2 text-xs">
+                        {category === "Programming Languages & IDEs" && "proficient" in data && Array.isArray(data.proficient) && (
+                          <>
+                            <div>
+                              <span className="text-green-300 font-medium">Proficient: </span>
+                              <span className="text-slate-300">{data.proficient.join(", ")}</span>
+                            </div>
+                            <div>
+                              <span className="text-yellow-300 font-medium">Moderate: </span>
+                              <span className="text-slate-300">{data.moderate.join(", ")}</span>
+                            </div>
+                            <div>
+                              <span className="text-blue-300 font-medium">IDEs: </span>
+                              <span className="text-slate-300">{data.ides.join(", ")}</span>
+                            </div>
+                          </>
+                        )}
+                        {category === "Database Management" && "relational" in data && Array.isArray(data.relational) && (
+                          <>
+                            <div>
+                              <span className="text-purple-300 font-medium">Relational: </span>
+                              <span className="text-slate-300">{data.relational.join(", ")}</span>
+                            </div>
+                            <div>
+                              <span className="text-cyan-300 font-medium">NoSQL: </span>
+                              <span className="text-slate-300">{data.nosql.join(", ")}</span>
+                            </div>
+                            <div>
+                              <span className="text-orange-300 font-medium">Big Data: </span>
+                              <span className="text-slate-300">{data.bigData.join(", ")}</span>
+                            </div>
+                            <div>
+                              <span className="text-pink-300 font-medium">Tools: </span>
+                              <span className="text-slate-300">{data.tools.join(", ")}</span>
+                            </div>
+                          </>
+                        )}
+                        {(category === "Testing" ||
+                          category === "Frameworks & Tools" ||
+                          category === "Web Technologies") && (
+                          <div>
+                            <span className="text-slate-300">
+                              {Array.isArray((data as any).areas)
+                                ? (data as { areas: string[] }).areas.join(", ")
+                                : Array.isArray((data as any).items)
+                                ? (data as { items: string[] }).items.join(", ")
+                                : ""}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Right Panel - Scrollable Content */}
-        <div className="lg:w-1/2 lg:ml-auto w-full min-h-screen bg-white/95 backdrop-blur-sm">
-          <div className="p-8 lg:p-16">
-            <header className="mb-12">
-              <div className="flex items-center gap-4 mb-4">
-                <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 text-center lg:text-right flex-1">
-                  {currentProject.title}
-                </h2>
-              </div>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 ml-auto mb-6"></div>
-              <div className="text-right">
-                <p className="text-xl text-gray-600">{currentProject.subtitle}</p>
-                <p className="text-gray-500">{currentProject.period}</p>
-                {currentProject.location && <p className="text-gray-500">{currentProject.location}</p>}
-                <a 
-                  href={currentProject.livePage} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-500 underline"
-                >
-                  {"Live Page"}
-                </a>
-              </div>
-            </header>
-
-            {/* Project Content */}
-            <div className="space-y-12">
-              <section>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Project Overview</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">{currentProject.overview}</p>
-                {currentProject.video && (
-                  <div className="aspect-video">
-                    <iframe
-                      src={currentProject.video}
-                      title="YouTube video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full rounded-lg shadow-lg"
-                    ></iframe>
+         {/* Right Panel - Scrollable Content */}
+        {currentView === "projects" ? (
+          // ... existing project content (keep all the current project display code)
+          <div className="lg:w-3/5 lg:ml-auto w-full min-h-screen bg-white/95 backdrop-blur-sm">
+            <div className="p-8 lg:p-12">
+              {/* Project Header */}
+              <header className="mb-12">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">
+                      {currentProject.title}
+                    </h2>
+                    <div className={`w-20 h-1 bg-gradient-to-r ${currentProject.color} mb-6`} />
                   </div>
-                )}
-                {currentProject.image &&(
-                  <img src={currentProject.image} alt="Description of image" className="w-full h-auto" />
-                )}
-                {currentProject.horzimage &&(
-                  <img src={currentProject.horzimage} alt="Description of image" className="h-auto" />
-                )}
-                
-                      {/* good Idea below with the circle boxes but not good in that it re iterates the idea that would be put in key features */}
-                {/* {activeProject === 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Mobile Friendly Web app</h4>
-                      <p className="text-gray-600 text-sm">
-                        Designed with young cancer patients in mind, ensuring easy navigation and accessibility on
-                        mobile devices. At most 2 clicks to access any book or resource.
-                      </p>
-                    </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Admin Management</h4>
-                      <p className="text-gray-600 text-sm">
-                        Admins can easily manage the library's book collection, including adding new books, automating
-                        the audit process, and automating the checkout and checkin process.
-                      </p>
-                    </div>
+                  <div className="flex gap-2 ml-4">
+                    <button
+                      onClick={prevProject}
+                      className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
+                      aria-label="Previous project"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-slate-600" />
+                    </button>
+                    <button
+                      onClick={nextProject}
+                      className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
+                      aria-label="Next project"
+                    >
+                      <ChevronRight className="w-5 h-5 text-slate-600" />
+                    </button>
                   </div>
-                )} */}
-              </section>
-
-              <section>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Key {activeProject === 0 ? "Features" : "Achievements"}
-                </h3>
-                <div className="space-y-4">
-                  {currentProject.features.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
                 </div>
-              </section>
 
-              <section>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Technology Stack</h3>
-                <div className="flex flex-wrap gap-3">
-                  {currentProject.techStack.map((tech) => (
-                    <span key={tech} className="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                {currentProject.impact && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">Project Impact</h3>
-                    <div className={`bg-gradient-to-r ${currentProject.color} p-8 rounded-2xl text-white`}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <p className="text-xl font-semibold text-slate-700 mb-2">{currentProject.subtitle}</p>
+                    <p className="text-slate-600 mb-1">{currentProject.period}</p>
+                    {currentProject.location && <p className="text-slate-500 text-sm">{currentProject.location}</p>}
+                  </div>
+                  <div className="flex justify-start md:justify-end">
+                    <a
+                      href={currentProject.livePage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors group"
+                    >
+                      <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </header>
+
+              {/* Project Content */}
+              <div className="space-y-12">
+                {/* Overview Section */}
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Project Overview</h3>
+                  <div className="bg-slate-50 rounded-2xl p-8 mb-8">
+                    <p className="text-slate-700 leading-relaxed text-lg">{currentProject.overview}</p>
+                  </div>
+
+                  {/* Media Content */}
+                  {currentProject.video && (
+                    <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                      <iframe
+                        src={currentProject.video}
+                        title="Project video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                    </div>
+                  )}
+                </section>
+
+                {/* Key Features */}
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Key Features</h3>
+                  <div className="grid gap-4">
+                    {currentProject.features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:shadow-md transition-shadow"
+                      >
+                        <div
+                          className={`w-2 h-2 bg-gradient-to-r ${currentProject.color} rounded-full mt-2 flex-shrink-0`}
+                        />
+                        <span className="text-slate-700 leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Technology Stack */}
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Technology Stack</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {currentProject.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-4 py-2 bg-white border border-slate-200 text-slate-800 rounded-lg text-sm font-medium hover:shadow-md transition-shadow"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Project Impact */}
+                {currentProject.impact && (
+                  <section>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6">Project Impact</h3>
+                    <div className={`bg-gradient-to-r ${currentProject.color} p-8 rounded-2xl text-white shadow-2xl`}>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         {currentProject.impact.map((stat, index) => (
-                          <div key={index}>
-                            <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                            <div className="text-white/80">{stat.label}</div>
+                          <div key={index} className="space-y-2">
+                            <div className="text-4xl font-bold">{stat.value}</div>
+                            <div className="text-white/90 font-medium">{stat.label}</div>
                           </div>
                         ))}
                       </div>
                     </div>
-                  </div>   
+                  </section>
                 )}
-              </section>
 
-              {activeProject === 0 && (
-                <section>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Development Process</h3>
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-purple-500 pl-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Research & Discovery</h4>
-                      <p className="text-gray-600">
-                        Worked closely with healthcare professionals to understand the needs and challenges, ensuring
-                        the app addresses real-world issues. Worked closely together as a team of 4 developers to finish
-                        this project within 4 months.
-                      </p>
-                    </div>
-                    <div className="border-l-4 border-pink-500 pl-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Design & Prototyping</h4>
-                      <p className="text-gray-600">
-                        Received a mock of the app from the healthcare professionals, which was then transformed into a
-                        functional prototype that is approved every week. The design focused on simplicity and ease of
-                        use for young patients.
-                      </p>
-                    </div>
-                    <div className="border-l-4 border-blue-500 pl-6">
-                      <h4 className="font-semibold text-gray-900 mb-2">Development & Testing</h4>
-                      <p className="text-gray-600">
-                        Developed the app using React and Tailwind CSS, ensuring a responsive and accessible design.
-                        Conducted thorough testing with real users to gather feedback and make necessary adjustments.
-                      </p>
-                    </div>
+                {/* Reflections and Future Plans */}
+                <section className="pb-12">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Reflections & Future Plans</h3>
+                  <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-8 rounded-2xl space-y-6">
+                    {currentProject.futurePlans && (
+                      <div>
+                        <h4 className="font-semibold text-slate-900 mb-3">Future Plans</h4>
+                        <p className="text-slate-700 leading-relaxed">{currentProject.futurePlans}</p>
+                      </div>
+                    )}
+                    {currentProject.reflections && (
+                      <div>
+                        <h4 className="font-semibold text-slate-900 mb-3">Personal Reflections</h4>
+                        <p className="text-slate-700 leading-relaxed italic font-medium">
+                          "{currentProject.reflections}"
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </section>
-              )}
-
-              {activeProject === 1 && (
-                <section>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Technical Highlights</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Performance Optimization</h4>
-                      <p className="text-gray-600 text-sm">
-                        Improved username search speed by 50% through custom autofill algorithms, enhancing admin
-                        efficiency.
-                      </p>
-                    </div>
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Security Implementation</h4>
-                      <p className="text-gray-600 text-sm">
-                        Built NIST-compliant authentication system with secure password management for 200+ users.
-                      </p>
-                    </div>
-                    <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Data Migration</h4>
-                      <p className="text-gray-600 text-sm">
-                        Successfully migrated data service from Java to VAST, improving storage management capabilities.
-                      </p>
-                    </div>
-                    <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl border border-orange-100">
-                      <h4 className="font-semibold text-gray-900 mb-2">Dynamic Forms</h4>
-                      <p className="text-gray-600 text-sm">
-                        Developed personalized training system with dynamic protected data forms for compliance.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-              )}
-
-              <section className="pb-12">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Post Project Reflections and Future Plans
-                </h3>
-                <div className="bg-gray-50 p-6 rounded-xl">
-                  <div className="space-y-4">
-                    <p className="text-gray-600">{currentProject.futurePlans}</p>
-                    <p className="text-gray-600 italic font-medium">{currentProject.reflections}</p>
-                  </div>
-                  
-                  {/* {activeProject === 0 ? (
-                    <div className="space-y-4">
-                      <p className="text-gray-600">
-                        The project has been passed on to the healthcare professionals and a Computer Science Professor,
-                        who will continue to maintain and enhance the app. Future plans include adding more features
-                        based on user feedback, such as personalized reading recommendations and integration with other
-                        healthcare resources.
-                      </p>
-                      <p className="text-gray-600 italic font-medium">
-                        "This project represents the summary of my college experience as I was able to show the
-                        qualities and talents I have nurtured throughout my time at BYU. I am excited to announce that
-                        this project placed 3rd place in the capstone judging competition at BYU."
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="space-y-3">
-                      <p className="text-gray-600">
-                        Currently developing advanced features to further enhance the supercomputer infrastructure:
-                      </p>
-                      <ul className="text-gray-600 space-y-2">
-                        <li>• Grant tracking algorithm to demonstrate service value to professors</li>
-                        <li>• Enhanced dynamic protected data forms with improved personalization</li>
-                        <li>• Advanced analytics dashboard for system administrators</li>
-                      </ul>
-                    </div>
-                  )} */}
-                </div>
-              </section>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          // Skills view
+          <div className="lg:w-3/5 lg:ml-auto w-full min-h-screen bg-white/80 backdrop-blur-sm">
+            <div className="p-8 lg:p-12">
+              <header className="mb-12">
+                <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Technical Skills</h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-violet-600 to-purple-600 mb-6" />
+                <p className="text-xl text-slate-600">
+                  A comprehensive overview of my technical expertise and proficiency levels
+                </p>
+              </header>
+
+              <div className="space-y-8">
+                {Object.entries(skills).map(([category, data]) => (
+                  <section key={category} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6">{category}</h3>
+
+                    {category === "Programming Languages & IDEs" && (
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-lg font-semibold text-green-700 mb-3">Proficient</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"proficient" in data &&
+                              Array.isArray(data.proficient) &&
+                              data.proficient.map((skill: string) => (
+                                <span
+                                  key={skill}
+                                  className="px-3 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-medium"
+                                >
+                                  {skill}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-yellow-700 mb-3">Moderate</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"moderate" in data &&
+                              Array.isArray(data.moderate) &&
+                              data.moderate.map((skill) => (
+                              <span
+                                key={skill}
+                                className="px-3 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-sm font-medium"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-blue-700 mb-3">IDEs</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"ides" in data &&
+                              Array.isArray(data.ides) &&
+                              data.ides.map((ide) => (
+                              <span
+                                key={ide}
+                                className="px-3 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium"
+                              >
+                                {ide}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {category === "Database Management" && (
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="text-lg font-semibold text-purple-700 mb-3">Relational Databases</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"relational" in data &&
+                              Array.isArray(data.relational) &&
+                              data.relational.map((db) => (
+                              <span
+                                key={db}
+                                className="px-3 py-2 bg-purple-100 text-purple-800 rounded-lg text-sm font-medium"
+                              >
+                                {db}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-cyan-700 mb-3">NoSQL Databases</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"nosql" in data &&
+                              Array.isArray(data.nosql) &&
+                              data.nosql.map((db) => (
+                              <span
+                                key={db}
+                                className="px-3 py-2 bg-cyan-100 text-cyan-800 rounded-lg text-sm font-medium"
+                              >
+                                {db}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-orange-700 mb-3">Big Data & Distributed Systems</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"bigData" in data &&
+                              Array.isArray(data.bigData) &&
+                              data.bigData.map((tool) => (
+                              <span
+                                key={tool}
+                                className="px-3 py-2 bg-orange-100 text-orange-800 rounded-lg text-sm font-medium"
+                              >
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-pink-700 mb-3">Database Tools</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {"tools" in data &&
+                              Array.isArray(data.tools) &&
+                              data.tools.map((tool) => (
+                              <span
+                                key={tool}
+                                className="px-3 py-2 bg-pink-100 text-pink-800 rounded-lg text-sm font-medium"
+                              >
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {(category === "Testing" ||
+                      category === "Frameworks & Tools" ||
+                      category === "Web Technologies") && (
+                      <div className="flex flex-wrap gap-2">
+                        {Array.isArray((data as any).areas) &&
+                          (data as { areas: string[] }).areas.map((item: string) => (
+                            <span
+                              key={item}
+                              className="px-3 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm font-medium"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        {Array.isArray((data as any).items) &&
+                          (data as { items: string[] }).items.map((item: string) => (
+                            <span
+                              key={item}
+                              className="px-3 py-2 bg-slate-100 text-slate-800 rounded-lg text-sm font-medium"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                      </div>
+                    )}
+                  </section>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
