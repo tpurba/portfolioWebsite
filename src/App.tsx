@@ -495,6 +495,12 @@ function App() {
                       />
                     </div>
                   )}
+                  {currentProject.image &&(
+                    <img src={currentProject.image} alt="Description of image" className="w-full h-auto" />
+                  )}
+                  {currentProject.horzimage &&(
+                    <img src={currentProject.horzimage} alt="Description of image" className="h-auto" />
+                  )}
                 </section>
 
                 {/* Key Features */}
