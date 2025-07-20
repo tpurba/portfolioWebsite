@@ -461,14 +461,14 @@ function App() {
                   )}
                   {currentProject.image && (
                     <img
-                      src={imageMap[currentProject.image] || "/placeholder.svg"}
+                      src={imageMap[currentProject.image as keyof typeof imageMap] || "/placeholder.svg"}
                       alt="Project screenshot"
                       className="w-full h-auto rounded-xl lg:rounded-2xl shadow-lg"
                     />
                   )}
                   {currentProject.horzimage && (
                     <img
-                      src={imageMap[currentProject.horzimage] || "/placeholder.svg"}
+                      src={imageMap[currentProject.horzimage as keyof typeof imageMap] || "/placeholder.svg"}
                       alt="Project screenshot"
                       className=" h-auto rounded-xl lg:rounded-2xl shadow-lg"
                     />
