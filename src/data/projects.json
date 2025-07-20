@@ -93,7 +93,7 @@
         ],
         "futurePlans": "This is a project that I plan to keep as a hobby project. I am looking to add more features such as a leaderboard and multiplayer support. I am also looking to improve the user interface and make it more user-friendly.",
         "reflections": "This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
-        "color": "from-green-500 to-teal-500"
+        "color": "from-green-500 to-yellow-500"
     },
     {
         "id": 4,
@@ -116,7 +116,7 @@
         ],
         "futurePlans": "This project is still in its early stages, I plan to work out some of the bugs I could not get to during the hackathon.",
         "reflections": "This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
-        "color": "from-green-500 to-teal-500"
+        "color": "from-yellow-500 to-orange-500"
     },
     {
         "id": 5,
@@ -135,7 +135,7 @@
         "techStack": ["JavaScript ", "HTML", "Python", "CSS", "MongoDB", "ChatGPT", "JSON"],
         "futurePlans": "This project was a proof of concept that I worked on for my database class. I plan to keep it as a hobby project and add more languages for users to test thier reading skills in.",
         "reflections": "This project was a test to see how far I could take a simple idea and leverage ChatGPT. I learned a lot about how to use ChatGPT from double shot to zero shot and how to use it to provide personalized feedback.",
-        "color": "from-green-500 to-teal-500"
+        "color": "from-orange-500 to-blue-500"
     },
     {
         "id": 6,
@@ -153,7 +153,7 @@
         ],
         "techStack": ["Java ", "Android Studio", "AWS"],
         "reflections": "This project was a huge project that took everything for me to finish on time. I remeber working tirelessly till 2am many days in a row to figure out and finish the project. I rememeber thinking of asking for help or working together on this project to finish it but I wanted to prove to myself that I could do it on my own. It was a great chance for me to really push myself as a individual coded and gave me the confidence to be able to solve any problem on my own if needed and not rely on others.",
-        "color": "from-green-500 to-teal-500"
+        "color": "from-blue-500 to-green-500"
     },
     {
         "id": 7,
@@ -173,6 +173,6 @@
         ],
         "techStack": ["Java ", "Android Studio"],
         "reflections": "This project was a very difficult project that required a lot of help from TAs. But through the help I recieved and the work that I put in I was able to complete this project.",
-        "color": "from-green-500 to-teal-500"
+        "color": "from-green-500 to-purple-500"
     }
 ]
