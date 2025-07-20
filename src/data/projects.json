@@ -1,0 +1,178 @@
+[
+    {
+        "id": 0,
+        "title": "Intermountain Health Clinic Library Web App",
+        "subtitle": "Front End Developer",
+        "location": "Intermountain Health Clinic, Provo, UT",
+        "livePage": "https://bibliotrace.com/login",
+        "video": "https://www.youtube.com/embed/5qw0Yw-X_9A",
+        "period": "January 2025 - April 2025",
+        "overview": "This project modernized an outdated Microsoft Access-based library system into a mobile-friendly web application designed for young cancer patients. The new system enhances accessibility with simplified navigation and larger text, allowing patients to use their own mobile devices. Additionally, the project upgraded the database and automated key processes—such as check-in/out, auditing, and data migration—reducing technical overhead for elderly volunteer administrators and improving the overall patient library experience.",
+        "features": [
+            "Mobile friendly web app designed for young cancer patients",
+            "Bigger text and simplified navigation for easy access at most 2 clicks to access any book or resource",
+            "Automated book checkout and checkin process",
+            "Automated audit process for book management",
+            "Admin management simplified for voluenteers to manage the library's book collection",
+            "Developed a search bar that returns relevant results even when users enter misspelled words or incorrect terms."
+        ],
+        "techStack": ["React", "Java Script", "Typescript", "Tailwind CSS", "MySQL", "AWS", "Docker"],
+        "impact": [
+            { "value": "40%", "label": "Faster Search" },
+            { "value": "70%", "label": "Automated Library Process" },
+            { "value": "3rd", "label": "Place in Capstone Competition" }
+        ],
+        "futurePlans": "The project has been passed on to the healthcare professionals and a Computer Science Professor, who will continue to maintain and enhance the app. Future plans include adding more features based on user feedback, such as personalized reading recommendations and integration with other healthcare resources.",
+        "reflections": "This project represents the summary of my college experience as I was able to show the qualities and talents I have nurtured throughout my time at BYU. I am excited to announce that this project placed 3rd place in the capstone judging competition at BYU.",
+        "color": "from-purple-500 to-pink-500"
+    },
+    {
+        "id": 1,
+        "title": "Office of Research and Computing Web Platform",
+        "subtitle": "Full Stack Web Developer",
+        "period": "January 2024 - April 2025",
+        "location": "Office of Research and Computing, Provo, UT",
+        "livePage": "https://rc.byu.edu/",
+        "image": "orc",
+        "overview": "Managed and developed new features for the Office of Research and Computing's web platform, which provides a supercomputer infrastructure to BYU researchers. This project involved migrating data services from Java to VAST, implementing secure user authentication, and developing a dynamic protected data form with a personalized training system. The platform serves over 6,000 users, enhancing their ability to manage storage and access computing resources efficiently.",
+        "features": [
+            "VAST API providing live storage data to 6,000+ users through web interface",
+            "Custom autofill algorithm improving username search speed by 50%",
+            "Secure user authentication with NIST-compliant password management",
+            "One-time password reset links for 200+ users",
+            "Grant tracking algorithm to demonstrate service value to 60+ professors",
+            "Dynamic protected data form with personalized training system to 250+ users"
+        ],
+        "techStack": ["JavaScript", "VAST", "MySQL", "Ajax", "PHP", "HTML", "CSS"],
+        "impact": [
+            { "value": "6,000+", "label": "Active Users" },
+            { "value": "50%", "label": "Search Speed Improvement" },
+            { "value": "200+", "label": "Secure User Accounts" }
+        ],
+        "reflections": "This experience has helped me improve as a full stack developer. I was also able to learn to lead a team of 4 developers to finish many features to the point where there were no more tickets to work on. In additions I have grown in being able to read other peoples code and able to gain a deeper understanding in debugging front end.",
+        "color": "from-blue-500 to-cyan-500"
+    },
+    {
+        "id": 2,
+        "title": "Pantry AI Web App",
+        "subtitle": "Front End Developer",
+        "location": "Utah State University, Logan, UT",
+        "livePage": "https://github.com/harrydcole2/usu-hackathon-project?tab=readme-ov-file",
+        "image": "pantryAI",
+        "period": "Feburary 2025",
+        "overview": "This is a project that I worked on during a hackathon at Utah State University. The goal was to create a web app that helps users manage their pantry inventory and suggests recipes based on available ingredients. The app uses AI to analyze the user's pantry items and provide personalized recipe recommendations, making meal planning easier and reducing food waste.",
+        "features": [
+            "Web app that helps users manage their pantry inventory",
+            "AI-powered recipe suggestions based on available ingredients",
+            "User-friendly interface for easy navigation and management of pantry items",
+            "Real-time updates on pantry inventory and recipe suggestions"
+        ],
+        "techStack": ["React", "TypeScript", "MySQL", "Docker"],
+        "futurePlans": "This project is still in its early stages, and I plan to keep it as a proof of concept in hopes that it can be paired with the walmart app to help users manage their pantry inventory and suggest recipes based on available ingredients. I am also looking to add more features such as a shopping list and meal planning.",
+        "reflections": "This project was a very fun project that a I set up with a group of 3 other friends. We had a hour planning session, no coding, before going into the USU 24 hour Hackathon. All in all we were able to develop a working product that we were proud of and had a lot of fun trying out new languages and tech stacks as well as be able to show what we could do as a team.",
+        "color": "from-green-500 to-teal-500"
+    },
+    {
+        "id": 3,
+        "title": "Bop it Smart Watch App",
+        "subtitle": "Tinkering with ESP32 Smart Watch Head",
+        "video": "https://www.youtube.com/embed/hD45-yQ770c",
+        "livePage": "https://github.com/tpurba/bopit-ESP32",
+        "period": "Janurary 2025 - April 2025",
+        "overview": "This is a project that I worked on as a hobby project. The goal was to create a smart watch app that allows users to play the classic game Bop it. The app uses the ESP32 microcontroller to connect to a smart watch and provides a fun and interactive way to play the game on the go.",
+        "features": [
+            "Simple and fun game that can be played on a smart watch",
+            "Takes in user input from the watch to control the game",
+            "Very simple and easy to use interface"
+        ],
+        "techStack": ["Arduino", "C++"],
+        "impact": [
+            { "value": "50+", "label": "Users enjoyed the game" },
+            { "value": "124", "label": "High score" },
+            { "value": "7+", "label": "Can play the game" }
+        ],
+        "futurePlans": "This is a project that I plan to keep as a hobby project. I am looking to add more features such as a leaderboard and multiplayer support. I am also looking to improve the user interface and make it more user-friendly.",
+        "reflections": "This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
+        "color": "from-green-500 to-teal-500"
+    },
+    {
+        "id": 4,
+        "title": "Trade Off the Game",
+        "subtitle": "Game Developer",
+        "video": "https://www.youtube.com/embed/1nLaHx9NoSI",
+        "livePage": "https://github.com/Swimnato/BYUGameJamSpring2025",
+        "period": "March 2025 - April 2025",
+        "overview": "This is a 3 week game jam Project that I worked on with a group of 7 people. 3 of us were developers creating a 3d top down metrovania game with a slight twist where you have to give up your keybindings/ conrtols to gain other abilities.",
+        "features": [
+            "Simple and fun game that can be played on a smart watch",
+            "Takes in user input from the watch to control the game",
+            "Very simple and easy to use interface"
+        ],
+        "techStack": ["Unreal Engine 5", "C#"],
+        "impact": [
+            { "value": "20+", "label": "Users enjoyed the game" },
+            { "value": "5+", "label": "Levels" },
+            { "value": "7+", "label": "Can play the game" }
+        ],
+        "futurePlans": "This project is still in its early stages, I plan to work out some of the bugs I could not get to during the hackathon.",
+        "reflections": "This project was a fun project that I worked on and was really fun to play. I had many friends play this game and enjoy it.",
+        "color": "from-green-500 to-teal-500"
+    },
+    {
+        "id": 5,
+        "title": "Project Code Reader Tester",
+        "subtitle": "Web Developer",
+        "image": "codeReader",
+        "livePage": "https://github.com/tpurba/CodeReaderTester",
+        "period": " December 2024",
+        "overview": "This is a project that I worked on for my database class. The goal was to create a web app that allows users to test their code reading skills. The app uses a simple interface to display code snippets and provides feedback on the user's performance. The app is designed to help users improve their code reading skills and become more proficient in programming.",
+        "features": [
+            "Simple UI that allows users to test their code reading skills",
+            "Provides feedback on the user's performance",
+            "Personlized feedback based on the user's performance",
+            "Leverages ChatGPT to provide personalized feedback"
+        ],
+        "techStack": ["JavaScript ", "HTML", "Python", "CSS", "MongoDB", "ChatGPT", "JSON"],
+        "futurePlans": "This project was a proof of concept that I worked on for my database class. I plan to keep it as a hobby project and add more languages for users to test thier reading skills in.",
+        "reflections": "This project was a test to see how far I could take a simple idea and leverage ChatGPT. I learned a lot about how to use ChatGPT from double shot to zero shot and how to use it to provide personalized feedback.",
+        "color": "from-green-500 to-teal-500"
+    },
+    {
+        "id": 6,
+        "title": "Tweeter Java based Android App",
+        "subtitle": "Android App Developer",
+        "video": "https://www.youtube.com/embed/aharuBnTSeE?si=mJuVUo_q2plx_kxX",
+        "livePage": "https://github.com/tpurba/CS340-Tweeter-app",
+        "period": "August 2023 - December 2023",
+        "overview": "This project was a semester long project that each student had to work on individually for CS340. The goal for this project was to teach good coding practices and software design by creating a tweeter app. This app is a MVC based Android app that supports all the basic features of a tweeter app such as posting, liking, and following users. The app is designed to be user-friendly and easy to navigate. The below video is a demo created by the TAs to show the apps features(Note: it is not my video nor exactly what my app looks like as I added a few more visuals but is very simlar).",
+        "features": [
+            "Simple UI that allows users to post, like, and follow users",
+            "AWS S3 usage for profile photos, authentication token, sign out functionality, and password hashing.",
+            "Handles 10,000 posts and 10,000 follow requests with ease",
+            "Provides users with real-time updates for counts and posts."
+        ],
+        "techStack": ["Java ", "Android Studio", "AWS"],
+        "reflections": "This project was a huge project that took everything for me to finish on time. I remeber working tirelessly till 2am many days in a row to figure out and finish the project. I rememeber thinking of asking for help or working together on this project to finish it but I wanted to prove to myself that I could do it on my own. It was a great chance for me to really push myself as a individual coded and gave me the confidence to be able to solve any problem on my own if needed and not rely on others.",
+        "color": "from-green-500 to-teal-500"
+    },
+    {
+        "id": 7,
+        "title": "Family Ancestry Android App",
+        "subtitle": "Android App Developer",
+        "horzimage": "familySearch",
+        "livePage": "https://github.com/tpurba/CS240FamilyApp",
+        "period": "August 2021 - December 2021",
+        "overview": "This project was a three quarter semester long project that each student had to work on individually for CS240. The goal for this project was to create a working android app that mimics the basic functionalities of a family search application. The features include adding/removing people to the family history, tracing the lineage on a map, and writing stories/information on the specific person.",
+        "features": [
+            "Simple and interactive UI that allows users to add/remove people to the family history",
+            "Tracing the lineage on a map",
+            "Writing stories/information on the specific person",
+            "Allows users to search for people in the family history",
+            "Allows users to view the family history in a tree format",
+            "Settings that filter the family history by Father side, Mother side, Male Events, and Female Events"
+        ],
+        "techStack": ["Java ", "Android Studio"],
+        "reflections": "This project was a very difficult project that required a lot of help from TAs. But through the help I recieved and the work that I put in I was able to complete this project.",
+        "color": "from-green-500 to-teal-500"
+    }
+]

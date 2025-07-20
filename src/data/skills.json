@@ -1,0 +1,22 @@
+{
+    "Programming Languages & IDEs": {
+        "proficient": ["C++", "Python", "PHP", "C", "JavaScript", "HTML", "CSS"],
+        "moderate": ["C#", "Java", "React"],
+        "ides": ["PHPStorm", "Visual Studio", "Unity", "Android Studio", "Arduino", "Godot"]
+    },
+    "Testing": {
+        "areas": ["Unit testing", "Automation", "Mocking with Mockito"]
+    },
+    "Frameworks & Tools": {
+        "items": ["React", "AWS", "MySQL"]
+    },
+    "Web Technologies": {
+        "items": ["CSS/HTML", "WebSockets", "DOM Manipulation"]
+    },
+    "Database Management": {
+        "relational": ["Oracle", "MySQL", "PostgreSQL", "SQLite"],
+        "nosql": ["MongoDB", "Redis"],
+        "bigData": ["Apache Spark"],
+        "tools": ["MySQL Workbench", "Redis Insight"]
+    }
+}
